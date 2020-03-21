@@ -38,6 +38,10 @@ export function register(config?: Config) {
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
     }
+    if (window.location.protocol === 'file:') {
+      // `file:` should be ignored for some none-browser environment, such as `Electron`.
+      return;
+    }
 
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;

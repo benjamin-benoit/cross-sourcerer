@@ -27,11 +27,13 @@
   },
   "build": {
     "appId": "some.id.ofyours",
+
     "files": [
       "**"
     ],
     "directories": {
-      "buildResources": "."
+      "buildResources": "./",
+      "output": "release/"
     },
     "win": {
       "category": "your.app.category.type",
