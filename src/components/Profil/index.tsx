@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { useCurrentWeatherQuery } from '../../generated/graphql'
-import CurrentWeather from './CurrentWeather'
+import { getProfilQuery } from '../../graphql/index';
+import { Profil } from '../../types/index';
 
-const CurrentWeatherContainer = () => {
-  const { data, error, loading } = useCurrentWeatherQuery();
+const Profil = () => {
+  const { data, error, loading } = getProfilQuery();
 
   if (loading) {
     return <div>Loading...</div>
@@ -13,9 +13,19 @@ const CurrentWeatherContainer = () => {
     return <div>Error!!</div>
   }
 
-  return <CurrentWeather data={data}/>;
+  return <div data={data}/>;
 }
 
-export default CurrentWeatherContainer
+// export default function Profil(props: ProfilProps) {
+//   const { loading, data, error } = getProfilQuery({
+//     variables: {},
+//   });
 
-export default LinkList
+//   function renderProfil(profil: Profil) {
+//     return <div key={profil.id}></div>;
+//   }
+
+//   return <div>{data?.profil && <FlatList data={data?.profil} keyExtractor={profil => profil.id} renderItem={({ item: profil }) => renderProfil(profil)} />}</div>;
+// }
+
+// export default Profil
