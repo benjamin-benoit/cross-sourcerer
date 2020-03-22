@@ -1,2 +1,2 @@
 /// <reference types="react-scripts" />
-REACT_APP_TOKEN= "14b0765fef7767d62b8184c3fa8c8fa39bc9e4c7"
+REACT_APP_TOKEN= "46c32d608293b62d077000d2e51397ccd248239e"

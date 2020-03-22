@@ -2,11 +2,11 @@ import { QueryHookOptions, MutationHookOptions, useQuery, useMutation } from '@a
 import { gql } from "apollo-boost";
 import { Profil } from '../types/index';
 
-interface GetProfilPayload {}
+// interface GetProfilPayload {}
 
-interface GetProfilResponse {
-  profil: Profil;
-}
+// interface GetProfilResponse {
+//   profil: Profil;
+// }
 
 export const PROFIL = gql`
     query {
@@ -21,4 +21,4 @@ export const PROFIL = gql`
     }
 `;
 
-export const getProfilQuery = (options: QueryHookOptions<GetProfilResponse, GetProfilPayload>) => useQuery(PROFIL, options);
+// export const getProfilQuery = (options: QueryHookOptions<GetProfilResponse, GetProfilPayload>) => useQuery(PROFIL, options);
