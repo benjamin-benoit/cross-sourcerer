@@ -10,27 +10,27 @@ const client = new ApolloClient({
   request: operation => {
     operation.setContext({
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_TOKEN ? process.env.REACT_APP_TOKEN : "46c32d608293b62d077000d2e51397ccd248239e"
+        Authorization: `Bearer ${process.env.REACT_APP_TOKEN ? process.env.REACT_APP_TOKEN : "a9a49756dde1e2a293a43e64e6adc42bbba7d0db"
       }`,
       },
     });
   },
 });
 
-// const GET_USER_INFOS = gql`
-//   query {
-//     viewer {
-//       avatarUrl
-//     }
-//   }
-// `;
+const GET_USER_INFOS = gql`
+  query {
+    viewer {
+      avatarUrl
+    }
+  }
+`;
 
-// client.query({ query: GET_USER_INFOS }).then(result => {
-//   console.log(result)
-// }).catch(error => {
-//   console.log(process.env.REACT_APP_TOKEN);
-//   console.log(error)
-// } )
+client.query({ query: GET_USER_INFOS }).then(result => {
+  console.log(result)
+}).catch(error => {
+  console.log(process.env.REACT_APP_TOKEN);
+  console.log(error)
+} )
 
 function App() {
   return (
