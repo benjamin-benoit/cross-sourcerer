@@ -1,12 +1,4 @@
-import { QueryHookOptions, MutationHookOptions, useQuery, useMutation } from '@apollo/react-hooks';
 import { gql } from "apollo-boost";
-import { Profil } from '../types/index';
-
-// interface GetProfilPayload {}
-
-// interface GetProfilResponse {
-//   profil: Profil;
-// }
 
 export const PROFIL = gql`
     query {
@@ -17,8 +9,63 @@ export const PROFIL = gql`
             location
             avatarUrl(size: 150)
             bio
+            following {
+                totalCount
+            }
+            followers {
+                totalCount
+            }
+            repositories {
+                totalCount
+            }
+            websiteUrl
         }
     }
 `;
 
-// export const getProfilQuery = (options: QueryHookOptions<GetProfilResponse, GetProfilPayload>) => useQuery(PROFIL, options);
+export const LANGUAGES = gql`
+    query {
+        viewer {
+        repositories(first: 100) {
+            totalCount
+            nodes {
+            languages(first: 100) {
+                totalCount
+                nodes {
+                name
+                color
+                }
+            }
+            }
+        }
+        }
+    }  
+  `;
+
+
+
+export const LANGUAGES_ID = gql`
+    query {
+        viewer {
+        repositories(first: 100) {
+            totalCount
+            edges {
+            repository: node {
+                id
+                ... on Repository {
+                id
+                languages(first: 100) {
+                    totalCount
+                    nodes {
+                    id
+                    name
+                    color
+                    }
+                }
+                }
+            }
+            }
+        }
+        }
+    }
+`;

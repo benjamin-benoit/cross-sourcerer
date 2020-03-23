@@ -1,0 +1,40 @@
+.content-center {
+    width: 80%;
+    margin: 20px 0 20px 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.profilHeader {
+    margin-top: 20px;
+    background-color: #ededed;
+    padding: 20px;
+}
+
+.username {
+    margin: auto;
+    text-align: center;
+}
+
+.blockTitle {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.avatarRound {
+    border-radius: 50%;
+    height: 70px;
+}
+
+.profilBoxes > * {
+    line-height: 50px;
+    background-color: #e0e0e0;
+    text-align: center;
+}
+
+.profilBoxes > *:hover {
+    background-color: #dbdbdb;
+}
