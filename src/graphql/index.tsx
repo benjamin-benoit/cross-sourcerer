@@ -26,41 +26,16 @@ export const PROFIL = gql`
 export const LANGUAGES = gql`
     query {
         viewer {
-        repositories(first: 100) {
-            totalCount
-            nodes {
-            languages(first: 100) {
-                totalCount
-                nodes {
-                name
-                color
-                }
-            }
-            }
-        }
-        }
-    }  
-  `;
-
-
-
-export const LANGUAGES_ID = gql`
-    query {
-        viewer {
+        id
         repositories(first: 100) {
             totalCount
             edges {
-            repository: node {
-                id
-                ... on Repository {
-                id
+            node {
                 languages(first: 100) {
-                    totalCount
-                    nodes {
-                    id
+                totalCount
+                nodes {
                     name
                     color
-                    }
                 }
                 }
             }
@@ -68,4 +43,36 @@ export const LANGUAGES_ID = gql`
         }
         }
     }
+  `;
+
+
+
+export const REPO = gql`
+query {
+    viewer {
+      id
+      repositories(first: 30) {
+        totalCount
+        edges {
+          cursor
+          node {
+            name
+            description
+            languages(first: 100) {
+              nodes {
+                color
+                name
+              }
+              totalCount
+            }
+            primaryLanguage {
+              name
+              color
+              id
+            }
+          }
+        }
+      }
+    }
+  }
 `;

@@ -4,6 +4,7 @@ import ApolloClient, { gql }  from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import Header from './components/Header/index'
 import Language from './components/Language/index'
+import Repositories from './components/Repositories/index'
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -45,6 +46,7 @@ function App() {
     <ApolloProvider client={client}>
       <Header/>
       <Language/>
+      <Repositories/>
     </ApolloProvider>
   );
 }

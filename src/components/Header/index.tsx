@@ -27,7 +27,7 @@ const Header = () => {
       <Col className="username">{data.viewer.login}</Col>
     </Row>
     <Row className="profilBoxes">
-      <Col>Commits: </Col>
+      {/* <Col>Commits: {data.viewer.repositories.defaultBranchRef.target.history.totalCount}</Col> */}
       <Col>Repos: {data.viewer.repositories.totalCount}</Col>
       <Col>Lines of code: {data.viewer.following.totalCount}</Col>
       <Col>Followers: {data.viewer.following.totalCount}</Col>

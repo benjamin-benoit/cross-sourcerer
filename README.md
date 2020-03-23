@@ -1,44 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Hello, Sourcerer
 
-## Available Scripts
+Add your token in .env file.
 
-In the project directory, you can run:
 
-### `yarn start`
+## <a name='TOC'>🐼 Summary</a>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Rules](#rules)
+* [Overview](#overview)
+* [Story](#story)
+* [Postlude](#postlude)
+* [Bonus](#bonus)
+* [Credits](#credits)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## <a name='overview'>🦊 Rules</a>
 
-### `yarn test`
+Hi, here are some rules to carry out this story oav;
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* You **MUST** create a git repository named `cross-sourcerer`
+* You **MUST** create a file called `.author.json` with your fullname
 
-### `yarn build`
+```sh
+~/cross-pwgame ❯❯❯ cat -e .author.json
+{
+  "fullname" : "Richard Stallman"
+}$
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Of course, you can talk about the subject with other developers, peer-learning is
+> the key to be a better developer. Don't hesitate to ask questions or help people on slack.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+> Don't forget, there is no useless question :-)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* You **MUST** return the project on Friday March, 23 at 16:00 pm by sending an MP on slack with the link of your github repo.
 
-### `yarn eject`
+## <a name='overview'>🐱 Overview</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project is about visual profile for software engineer and **HAVE TO** be a **UNIVERSAL APP**, thats means work on desktop (yo [**Electron**](https://www.electronjs.org/), website and mobile;<br />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You **HAVE TO** use for all web based applicaiton at least one **PWA** native features: `offline`, `notifications`, etc.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You **CAN** use any ui.x libraries you want [ if interested, you can even create your own ]<br />
+You **CAN** use any front-end libraries you want.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## <a name='story'>🐨 Story</a>
 
-## Learn More
+### = Prelude
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Well, as a developer we all use Github ; But is there a way to have visual informations of public users informations and meta-data ?
+Yes ! Thanks to Github API we can have any data we want, and the goal of the project is to make a copycat of.... [**Sourcerer**](https://sourcerer.io/) !
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The website first usecase is to simply consume Github API to display data.
+
+You **MUST** do the same by using **GraphQL Github API** available [here](https://developer.github.com/v4/)
+
+The purpose here is to share maxium possible code from all clients (and server of course in case of bonuses ;p)
+
+### = Features
+
+Take a look at the screen below ;<br />
+Everything in red is **MANDATORY** and **ROSE** is optionnal
+![](./sourcerer.majdi.png)
+
+## <a name='bonus'>🦄 Bonus</a>
+
+I know you love that, well you can in bulk:
+
+* Create a proxy server that handle Github API request (save them) and then send to the client #data :)
+* Allow a user to connect to Githu using PWA API
+* Add more visual effect #css4TheWin 🎉
+
+## <a name='credits'>🐵 Credits</a>
+
+Craft with :heart: in **Paris**.

@@ -1,7 +1,8 @@
 import React from 'react'
-import { LANGUAGES_ID } from '../../graphql/index';
+import { LANGUAGES } from '../../graphql/index';
 import { useQuery } from '@apollo/react-hooks';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';import { gql } from "apollo-boost";
+
 
 // interface LanguageInterface {
 //   search: {
@@ -11,13 +12,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Language = () => {
 
-  const { data, loading, error } = useQuery(LANGUAGES_ID, {
+  const { data, loading, error } = useQuery(LANGUAGES, {
     variables: { }
   });
-
-  if (data)(
-    console.log(data)
-  ) 
 
   if (loading) {
     return <p>Loading...</p>;
@@ -28,12 +25,20 @@ const Language = () => {
   }
   
   return (
-  <Container>
+  <Container className="language">
     <Row>
-      {/* {data?.map(
-        <Col className="blockTitle"></Col>
-      )} */}
+      <Col className="blockTitle">Languages</Col>
     </Row>
+    <span>{data?.viewer.repositories.totalCount}</span><br/>
+      {data?.viewer.repositories.edges.map((edge: any) => {
+        return edge.node.languages.nodes.map((node: any, index: number) => {
+          return(
+            <div key={index}>
+              <span>{node.name}</span>
+            </div>
+          );
+        })
+      })}
   </Container>
   )};
 
